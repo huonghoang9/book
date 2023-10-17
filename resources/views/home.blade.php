@@ -49,19 +49,19 @@
     <h1>Top 10 Sách Nổi Bật</h1>
 
     <div class="featured_book_box">
-        @foreach($books as $book)
+        @foreach($top10Books as $book)
         <div class="featured_book_card">
 
                 <div class="featurde_book_img">
-                    <img src="{{$book->image}}">
+                    <img src="{{$book->image? Storage::url($book->image):''}}">
                 </div>
 
                 <div class="featurde_book_tag">
-                    <h2>Tên Sách: {{$book->book_name}}</h2>
-                    <p class="writer">Tác Giả: {{$book->author_name}}</p>
-                    <p class="writer">Loại Sách: {{$book->category_name}}</p>
-                    <p class="book_price">Giá Khuyến Mãi: {{$book->price}} VNĐ<sub><del><br> Giá Gốc: {{$book->price}} VNĐ</del></sub></p>
-                    <a href="#" class="f_btn">Chi Tiết</a>
+                    <h4>Tên Sách: {{$book->book_name}}</h3>
+                    <h5 class="writer">Tác Giả: {{$book->author->author_name}}</h5>
+                    <h5 class="writer">Loại Sách: {{ $book->category->category_name}}</h5>
+                    <h5 class="book_price">Giá Khuyến Mãi: {{$book->promotion_price}} VNĐ<sub><del><br> Giá Gốc: {{$book->price}} VNĐ</del></sub></h5>
+                    <a href="{{route('detail',['id'=>$book->id])}}" class="f_btn">Chi Tiết</a>
                 </div>
 
         </div>

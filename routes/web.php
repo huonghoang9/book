@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[HomeController::class, 'index']);
+Route::get('/',[HomeController::class, 'index'])->name('index');
 
 
 // Book
@@ -51,4 +51,11 @@ Route::get('/delete/promotion/{id}',[PromotionController::class, 'delete'])->nam
 // review
 Route::get('/list_review',[ReviewController::class, 'list_review'])->name('list_review');
 Route::get('/delete/review/{id}',[ReviewController::class, 'delete'])->name('delete_review');
+
+// detail
+Route::get('/detail/{id}',[HomeController::class, 'detail'])->name('detail');
+
+Route::get('/category_list',[HomeController::class, 'category_list'])->name('category_list');
+//cart
+Route::match(['GET', 'POST'], 'cart', [HomeController::class, 'cart'])->name('cart');
 

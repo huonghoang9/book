@@ -12,6 +12,7 @@ class Book extends Model
     protected $fillable=[
         "book_name",
         'price',
+        'promotion_price',
         'publishing_year',
         'quantity',
         'image',
@@ -31,6 +32,10 @@ class Book extends Model
         return $this->belongsTo(Author::class);
     }
 
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'cate_id');
+    }
 
     // Trong model Book
     public function reviews()

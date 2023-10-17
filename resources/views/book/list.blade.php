@@ -20,6 +20,7 @@
                 <th>ID</th>
                 <th>Tên Sách</th>
                 <th>Giá</th>
+                <th>Giá Khuyến Mãi</th>
                 <th>Năm Xuất Bản</th>
                 <th>Số Lượng</th>
                 <th>Loại Sách</th>
@@ -37,6 +38,7 @@
                     <td>{{$book->id}}</td>
                     <td>{{$book->book_name}}</td>
                     <td>{{$book->price}}</td>
+                    <td>{{$book->promotion_price}}</td>
                     <td>{{$book->publishing_year}}</td>
                     <td>{{$book->quantity}}</td>
                     <td>{{$book->category_name}}</td>

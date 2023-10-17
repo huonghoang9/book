@@ -1,3 +1,6 @@
+<?php
+use App\Models\Category;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,15 +20,22 @@
         </div>
 
         <ul>
-            <li><a href="#Home">Trang Chủ</a></li>
-            <li><a href="#About">Về Chúng Tôi</a></li>
-            <li><a href="#Featured">Sách Đặc Sắc</a></li>
+            <li><a href="{{route('index')}}">Trang Chủ</a></li>
+            <li><a href="{{route('cart')}}">Giỏ Hàng</a></li>
+            <li><a href="#Featured">Sách Đặc Sắc</a>
+            <ul class="sub-menu">
+                @foreach(Category::all() as $category)
+                <li class=""><a href=""></a>{{$category->category_name}}</li>
+                @endforeach
+            </ul>
+            </li>
             <li><a href="#Blog">Blog</a></li>
         </ul>
 
         <div class="social_icon">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <i class="fa-solid fa-heart"></i>
+           <a href="{{route('cart')}}"> <i class="fa-solid fa-cart-shopping"></i></a>
+
         </div>
 
     </nav>
@@ -43,7 +53,7 @@
         </div>
 
         <div class="main_img">
-            <img src="image/table.png">
+            <img src="/image/table.png">
         </div>
 
     </div>
@@ -83,7 +93,6 @@
             <a href="#"><i class="fa-solid fa-phone"></i>+94 12 345 6789</a>
             <a href="#"><i class="fa-solid fa-phone"></i>+94 32 444 699</a>
             <a href="#"><i class="fa-solid fa-envelope"></i>bookstore123@gmail.com</a>
-
         </div>
 
         <div class="tag">
@@ -94,7 +103,6 @@
                 <i class="fa-brands fa-twitter"></i>
                 <i class="fa-brands fa-linkedin-in"></i>
             </div>
-
         </div>
 
         <div class="tag">

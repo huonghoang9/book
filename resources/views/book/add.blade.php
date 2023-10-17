@@ -15,6 +15,11 @@
         </div>
 
         <div class="mb-3">
+            <label class="form-label">Giá Khuyến Mãi</label>
+            <input type="text" class="form-control" name="promotion_price">
+        </div>
+
+        <div class="mb-3">
             <label class="form-label">Năm Xuất Bản</label>
             <input type="text" class="form-control" name="publishing_year">
         </div>

@@ -18,6 +18,8 @@ class PromotionController extends Controller
             $listPromotion = $promotion::where('discount_code', 'like','%'. $request->searchPromotion . '%')->get();
         }
         return view('promotion.list',compact('listPromotion'));
+
+
     }
 
     public function add(PromotionRequest $request){

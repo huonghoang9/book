@@ -32,12 +32,13 @@ class BookController extends Controller
 
     public function add(BookRequest $request){
         if($request->isMethod('POST')){
-            if($request->hasFile('image')&& $request->file('image')->isValid()){
-                $request->image = uploadFile('images', $request->file('image'));
-            }
+            
+        if($request->hasFile('image') && $request->file('image')->isValid()){
+            $request->image = uploadFile('images',$request->file('image'));
+        }
 
-            $params = $request->except('_token');
-            $params['images']= $request->image;
+        $params = $request->except('_token');
+        $params['image'] = $request->image;
 
             $book = Book::create($params);
 
